@@ -3,7 +3,7 @@ import { Container, Box, Heading, Text } from 'theme-ui';
 import Image from 'components/image';
 import { Link } from 'components/link';
 import { FaAngleRight, FaPlay } from 'react-icons/fa';
-import ModalVideo from 'react-modal-video';
+const ModalVideo = dynamic(() => import('react-modal-video'), { ssr: false });
 
 import videoImg from 'assets/video.png';
 
@@ -14,35 +14,34 @@ const VideoOne = () => {
     setVideoOpen(true);
   };
   return (
-    <Box as="section" sx={styles.video}>
+    <Box as='section' sx={styles.video}>
       <Container>
-        <Heading as="h3">
+        <Heading as='h3'>
           Leading companies trust us <br /> to develop software
         </Heading>
-        <Text as="p">
+        <Text as='p'>
           We believe it’s important for everyone to have access to software{' '}
           <br />
           especially when it comes to digital learning be navigate.
         </Text>
-        <Link path="/" sx={styles.link}>
+        <Link path='/' sx={styles.link}>
           Explore Details <FaAngleRight />
         </Link>
         <Box sx={styles.videoBox}>
-          <Image src={videoImg} alt="" />
+          <Image src={videoImg} alt='' />
           <Link
-            path="/"
-            aria-label="video btn"
+            path='/'
+            aria-label='video btn'
             onClick={handleClick}
-            sx={styles.videoBtn}
-          >
+            sx={styles.videoBtn}>
             <FaPlay />
           </Link>
         </Box>
       </Container>
       <ModalVideo
-        channel="youtube"
+        channel='youtube'
         isOpen={videoOpen}
-        videoId="Cm3U-NgJb9I"
+        videoId='Cm3U-NgJb9I'
         onClose={() => setVideoOpen(false)}
       />
     </Box>
