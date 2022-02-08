@@ -3,6 +3,8 @@ import { Container, Box, Heading, Text } from 'theme-ui';
 import Image from 'components/image';
 import { Link } from 'components/link';
 import { FaAngleRight, FaPlay } from 'react-icons/fa';
+import dynamic from 'next/dynamic';
+
 const ModalVideo = dynamic(() => import('react-modal-video'), { ssr: false });
 
 import videoImg from 'assets/video.png';
